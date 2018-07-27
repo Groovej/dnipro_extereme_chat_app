@@ -1,0 +1,73 @@
+{
+  "name": "Application for Extareme chat Dnipro",
+  "private": false,
+  "version": "0.0.1",
+  "description": "React infrastructure for Extreme chat  Web app",
+  "main": "src/index.js",
+  "directories": {
+    "assets:": "./src"
+  },
+  "engines": {
+    "node": "8.1.3"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Bohdan Naumenko",
+    "email": "bogdannaumenko.ua@gmail.com",
+    "url": "https://github.com/groovej"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Groovej/dnipro_extereme_chat_app"
+  },
+  "homepage": "https://wake.lomokid.com",
+  "dependencies": {
+    "axios": "*",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.3.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "base-64": "^0.1.0",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-beta",
+    "es5-shim": "^4.5.9",
+    "es6-promise": "^4.1.1",
+    "expose-loader": "^0.7.3",
+    "express": "^4.16.3",
+    "imports-loader": "^0.7.1",
+    "isomorphic-fetch": "*",
+    "loader-utils": "^1.1.0",
+    "nodemon": "^1.18.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "react-router-redux-dom-link": "^0.3.0",
+    "react-transition-group": "^2.2.1",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.7.0",
+    "webpack-manifest-plugin": "^1.3.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "prop-types": "^15.6.0",
+    "uglify-js-brunch": "2.10.0"
+  },
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "webpack": "./node_modules/.bin/webpack -w",
+  }
+}
