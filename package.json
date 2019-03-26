@@ -1,8 +1,8 @@
 {
-  "name": "Application for Extareme chat Dnipro",
+  "name": "Application_for_Extreme_chat_Dnipro",
   "private": false,
   "version": "0.0.1",
-  "description": "React infrastructure for Extreme chat  Web app",
+  "description": "React infrastructure for Extreme chat Web app",
   "main": "src/index.js",
   "directories": {
     "assets:": "./src"
@@ -54,20 +54,22 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-router-redux-dom-link": "^0.3.0",
+    "react-telephone-input": "^4.71.11",
     "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^2.7.0",
     "webpack-manifest-plugin": "^1.3.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "yarn": "^1.7.0"
   },
   "devDependencies": {
     "prop-types": "^15.6.0",
     "uglify-js-brunch": "2.10.0"
   },
   "scripts": {
-    "start": "nodemon ./index.js",
-    "webpack": "./node_modules/.bin/webpack -w",
+    "start": "nodemon src/server/index.js",
+    "webpack": "./node_modules/.bin/webpack -w --config webpack.development.config.js"
   }
 }

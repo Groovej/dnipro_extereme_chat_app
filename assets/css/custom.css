@@ -280,3 +280,29 @@ table tbody th {
   line-height: 0.1rem;
   margin-top: 6rem;
 }
+
+.input-flag {
+  width: 17px;
+  height: 17px;
+  top: 35px;
+  left: 10px;
+  position: relative;
+}
+
+.react-tel-input > input {
+  padding-left: 35px;
+  width: 60%;
+}
+
+.with-error {
+  color: #f03533;
+}
+input[type="text"].with-error,
+.with-error > input[type="tel"],
+input[type="password"].with-error {
+  border: 1px solid #f03533;
+  color: black;
+}
+.flag-dropdown {
+  display: none;
+}
