@@ -38,11 +38,9 @@
     "babel-runtime": "^6.26.0",
     "base-64": "^0.1.0",
     "body-parser": "^1.18.2",
-    "bootstrap": "^4.0.0-beta",
     "es5-shim": "^4.5.9",
     "es6-promise": "^4.1.1",
     "expose-loader": "^0.7.3",
-    "express": "^4.16.3",
     "imports-loader": "^0.7.1",
     "isomorphic-fetch": "*",
     "loader-utils": "^1.1.0",
@@ -52,7 +50,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.6",
     "react-router-redux-dom-link": "^0.3.0",
     "react-telephone-input": "^4.71.11",
     "react-transition-group": "^2.2.1",
@@ -69,7 +67,6 @@
     "uglify-js-brunch": "2.10.0"
   },
   "scripts": {
-    "start": "nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack -w --config webpack.development.config.js"
   }
 }

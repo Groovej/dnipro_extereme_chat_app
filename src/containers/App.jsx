@@ -5,6 +5,7 @@ import history from '../utils/history'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 import Multistep from './Multistep'
+import Verify from './Verify'
 
 class App extends React.Component {
   constructor(props){
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Route exact path='/signin' component={SignIn} />
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/' component={Multistep} />
+          <Route exact path='/verify' component={Verify} />
         </Switch>
       </Router>
     )

@@ -1,0 +1,2 @@
+client: $(npm bin)/webpack -w --config webpack.development.config.js
+web: ruby myapp.rb

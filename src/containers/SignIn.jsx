@@ -19,7 +19,7 @@ class SignIn extends React.Component {
       defaultCountry: 'ua',
       preferredCountries: ['ua'],
       onChange: this.phoneNumberChanged,
-      flagsImagePath: '../../assets/images/flags.png'
+      flagsImagePath: '/images/flags.png'
     }
 
     return (
@@ -30,7 +30,7 @@ class SignIn extends React.Component {
           <div className="six columns">
             <label> Your phone number </label>
             <div>
-              <img alt="UA" className="input-flag" src="../../assets/images/ua.svg" />
+              <img alt="UA" className="input-flag" src="/images/ua.svg" />
               <ReactTelInput {...telInputProps}/>
             </div>
           </div>

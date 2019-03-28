@@ -2,3 +2,4 @@ node_modules
 assets/application-compiled.js
 package-lock.json
 yarn.lock
+Gemfile.lock
