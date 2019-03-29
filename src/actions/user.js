@@ -113,7 +113,6 @@ const authenticateMe = ({ params, redirecTAction }) => {
     })
     .then( response => response.json() )
     .then( ({ error, success }) => {
-      debugger
         if (error) {
           dispatch({ type: 'USER_EROR', payload: error })
           dispatch( push(`/signin`) )
