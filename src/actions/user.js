@@ -55,6 +55,9 @@ const verifyUser = ({ data, redirecTAction }) => {
           dispatch({ type: 'USER_EROR', payload: error })
           dispatch( push(`/verify`) )
         } else {
+          if (redirecTAction) {
+            dispatch({ type: 'USER_PASSWORD_RESETED', payload: redirecTAction })
+          }
           const path = redirecTAction ? pathResolver[redirecTAction] : '/signin'
           dispatch( push(path) );
         }
@@ -75,7 +78,7 @@ const getToken = ({ phone, redirecTAction }) => {
             'Content-Type': 'application/json'
           },
           credentials: 'same-origin',
-          body: JSON.stringify(phone)
+          body: JSON.stringify({ phone })
         })
     .catch(response => {
       dispatch({ type: 'USER_EROR' })
@@ -87,7 +90,7 @@ const getToken = ({ phone, redirecTAction }) => {
           dispatch( push(`/signin`) )
         } else {
           dispatch({ type: 'USER_ACTION', payload: redirecTAction })
-          dispatch('/verify');
+          dispatch(push('/verify'));
         }
     })
 

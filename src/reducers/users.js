@@ -12,8 +12,6 @@ const Users = (state = initialState, action) => {
       return { ...state, fetching: false, error: action.payload, reset: false }
     case 'USER_PASSWORD_RESETED':
       return { ...state, fetching: false, error: false, reset: true }
-    case 'SMS_TOKEN_SUCCESS':
-      return { ...state, fetching: false, error: false, reset: false, redirecTAction: action.payload.action }
     case 'USER_ACTION':
       return { ...state, fetching: false, error: false, reset: false, redirecTAction: action.payload }
     default:

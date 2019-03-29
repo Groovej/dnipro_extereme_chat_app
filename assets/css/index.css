@@ -200,20 +200,20 @@ ____________________________________  */
 button.button-success {
   color: #FFF;
   background-color: #2ECC71;
-  border-color: #2ECC71; }
+  border-color: #2ECC71;
 }
 button.button-success:hover {
   color: #FFF;
   background-color: #59b681;
-  border-color: #59b681; }
+  border-color: #59b681;
 }
 button.button-warning {
   color: #000000;
-  background-color: #FCF3CF;
-  border-color: #FCF3CF; }
+  background-color: #ffe785;
+  border-color: #ffe785;
 }
-button.button-warning {
+button.button-warning:hover {
   color: #000000;
   background-color: #f9db66;
-  border-color: #f9db66; }
+  border-color: #f9db66;
 }

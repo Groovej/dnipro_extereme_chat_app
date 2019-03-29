@@ -95,7 +95,7 @@ class SignUp extends React.Component {
   }
 
   render(){
-    const { fetching, error, reset } = this.props.user
+    const { fetching, error, redirecTAction, reset } = this.props.user
     const { phoneInvalid, onPattern, phoneToShort, touched, passwordEmpty,
       passwordConfirmationEmpty, passwordConfirmationDontMatch, passwordToShort, phone } = this.state
     const onlyUACountry = Object.assign({}, {name: 'Ukraine (Україна)'} , {iso2: 'ua'}, {dialCode: '380'}, {format: '+...(..)...-..-..' })
@@ -173,7 +173,7 @@ class SignUp extends React.Component {
             <Link to='/signin'>
               <button className="button-primary"> Sign In </button>
             </Link>
-            <button className="margin-left2 button-primary" onClick={this.submitForm}> Register ME </button>
+            <button className="margin-left2 button-primary" onClick={this.submitForm}>{redirecTAction ? 'Reset Password!' : 'Register ME'}</button>
           </div>
         </div>
       </Fragment>
