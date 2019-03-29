@@ -1,4 +1,4 @@
-Иimport React, { Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as UserActions from '../actions/user'
@@ -28,10 +28,11 @@ class Verify extends React.Component {
 
   verifyMe(){
     const smsToken = this.verification.current.value.trim()
+    const { userActions, user } = this.props
     if ( smsToken.length === 0 ) {
       this.setState({ touched: true })
     } else {
-      this.props.userActions.verifyUser({ sms: smsToken })
+      userActions.verifyUser({ data: { sms: smsToken }, redirecTAction: user.redirecTAction })
     }
   }
 

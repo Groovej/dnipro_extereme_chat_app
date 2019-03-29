@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import ReactTelInput from "react-telephone-input"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 import * as UserActions from '../actions/user'
 
 class SignUp extends React.Component {
@@ -69,7 +70,6 @@ class SignUp extends React.Component {
     if (this.password.current.value.trim().length > password.trim().length) {
       passwordValue = this.password.current.value.trim()
     }
-    const phoneInputValue = this.phone.current.__domNode.firstElementChild.value
     let props = { touched: true, ...this.validatePhone(phone) }
     if (password.length === 0 || this.password.current.value.trim().length === 0) {
       props.passwordEmpty = true
@@ -86,7 +86,7 @@ class SignUp extends React.Component {
 
     const allValid = Object.keys(props).filter( (key) => props[key] )
     if (allValid[0] === 'touched' && allValid.length === 1) {
-      this.props.userActions.signMeUp({ phone, passowrd: passwordValue })
+      this.props.userActions.signMeUp({ phone, password: passwordValue })
     } else {
       this.setState(props)
     }
@@ -95,9 +95,9 @@ class SignUp extends React.Component {
   }
 
   render(){
-    const { fetching, error } = this.props.user
+    const { fetching, error, reset } = this.props.user
     const { phoneInvalid, onPattern, phoneToShort, touched, passwordEmpty,
-      passwordConfirmationEmpty, passwordConfirmationDontMatch, passwordToShort } = this.state
+      passwordConfirmationEmpty, passwordConfirmationDontMatch, passwordToShort, phone } = this.state
     const onlyUACountry = Object.assign({}, {name: 'Ukraine (Україна)'} , {iso2: 'ua'}, {dialCode: '380'}, {format: '+...(..)...-..-..' })
     const telInputProps = {
       inputProps: { autoFocus: true },
@@ -107,6 +107,9 @@ class SignUp extends React.Component {
       flagsImagePath: 'images/flags.png',
       ref: this.phone,
       className: phoneInvalid ? 'with-error' : ''
+    }
+    if (phone.length !== 0) {
+      telInputProps.value = phone
     }
     const passwordConfirmationWithError = touched && (passwordConfirmationEmpty || passwordConfirmationDontMatch)
     const passwordWithError = touched && (passwordEmpty || passwordToShort)
@@ -119,8 +122,12 @@ class SignUp extends React.Component {
           </div>
         }
         <div className="container">
+          <br/>
           { error &&
             <p className="alert alert-error">{ error || 'Somethig went wrong, please reload the page.' }</p>
+          }
+          { reset &&
+            <p className="alert alert-success">Password Was reseted. Enter new password.</p>
           }
           <br/>
           <br/>
@@ -163,7 +170,10 @@ class SignUp extends React.Component {
             </div>
           </div>
           <div className="container app-footer">
-            <button className="button-primary" onClick={this.submitForm}> Register ME </button>
+            <Link to='/signin'>
+              <button className="button-primary"> Sign In </button>
+            </Link>
+            <button className="margin-left2 button-primary" onClick={this.submitForm}> Register ME </button>
           </div>
         </div>
       </Fragment>

@@ -20,6 +20,7 @@ class App extends React.Component {
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/' component={Multistep} />
           <Route exact path='/verify' component={Verify} />
+          <Route exact path='/multistep' component={Multistep} />
         </Switch>
       </Router>
     )
