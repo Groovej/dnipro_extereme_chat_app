@@ -18,12 +18,12 @@ const signMeUp = params => {
           body: JSON.stringify(params)
         })
     .catch(response => {
-      dispatch({ type: 'USER_EROR' })
+      dispatch({ type: 'USER_ERROR' })
     })
     .then( response => response.json() )
     .then( ({ error, success }) => {
         if (error) {
-          dispatch({ type: 'USER_EROR', payload: error })
+          dispatch({ type: 'USER_ERROR', payload: error })
         } else {
           dispatch(push(`/verify`))
         }
@@ -47,17 +47,20 @@ const verifyUser = ({ data, redirecTAction }) => {
           body: JSON.stringify(data)
         })
     .catch(response => {
-      dispatch({ type: 'USER_EROR' })
+      dispatch({ type: 'USER_ERROR' })
     })
     .then( response => response.json() )
     .then( ({ error, success }) => {
         if (error) {
-          dispatch({ type: 'USER_EROR', payload: error })
+          dispatch({ type: 'USER_ERROR', payload: error })
           dispatch( push(`/verify`) )
         } else {
+          debugger
+
           if (redirecTAction) {
             dispatch({ type: 'USER_PASSWORD_RESETED', payload: redirecTAction })
           }
+
           const path = redirecTAction ? pathResolver[redirecTAction] : '/signin'
           dispatch( push(path) );
         }
@@ -81,12 +84,12 @@ const getToken = ({ phone, redirecTAction }) => {
           body: JSON.stringify({ phone })
         })
     .catch(response => {
-      dispatch({ type: 'USER_EROR' })
+      dispatch({ type: 'USER_ERROR' })
     })
     .then( response => response.json() )
     .then( ({ error, success }) => {
         if (error) {
-          dispatch({ type: 'USER_EROR', payload: error })
+          dispatch({ type: 'USER_ERROR', payload: error })
           dispatch( push(`/signin`) )
         } else {
           dispatch({ type: 'USER_ACTION', payload: redirecTAction })
@@ -112,12 +115,12 @@ const authenticateMe = ({ params, redirecTAction }) => {
           body: JSON.stringify(params)
         })
     .catch(response => {
-      dispatch({ type: 'USER_EROR' })
+      dispatch({ type: 'USER_ERROR' })
     })
     .then( response => response.json() )
     .then( ({ error, success }) => {
         if (error) {
-          dispatch({ type: 'USER_EROR', payload: error })
+          dispatch({ type: 'USER_ERROR', payload: error })
           dispatch( push(`/signin`) )
         } else {
           dispatch({ type: 'USER_ACTION', payload: redirecTAction })
@@ -133,7 +136,7 @@ const authenticateMe = ({ params, redirecTAction }) => {
 
 const notSignedIn = () => {
   return dispatch => {
-    dispatch({ type: 'USER_EROR', payload: 'You Are NOT signed IN!!!' })
+    dispatch({ type: 'USER_ERROR', payload: 'You Are NOT signed IN!!!' })
     dispatch( push(`/signin`) )
   }
 }
@@ -150,12 +153,12 @@ const resetPassword = ({ phone }) => {
           body: JSON.stringify({ phone })
         })
     .catch(response => {
-      dispatch({ type: 'USER_EROR' })
+      dispatch({ type: 'USER_ERROR' })
     })
     .then( response => response.json() )
     .then( ({ error, success }) => {
         if (error) {
-          dispatch({ type: 'USER_EROR', payload: error })
+          dispatch({ type: 'USER_ERROR', payload: error })
           dispatch( push(`/signin`) )
         } else {
           dispatch({ type: 'USER_PASSWORD_RESETED' })
